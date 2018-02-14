@@ -1,0 +1,32 @@
+使用webpack 打包index.js
+1. 进入相应目录
+2. 使用npm创建配置文件 
+	npm init (输入对应包名，版本，入口名...)
+3. 使用npm 安装react cnpm 
+    cnpm install --save react react-dom babelify babel-preset-react（安装对应的包）
+    cnpm install --save   babel-preset-es2015 (解析包) 
+	cnpm install babel-loader --save（切记）
+	cnpm install babel-core（切记））
+	
+4.webpack 热加载方法
+	为什么要使用webPack?
+		因为我们无法直接引用我们自己书写的jsx（浏览器解释不了），所以我们通过webpack来把我们书写的jsx打包成浏览器可以识别的js文件。
+	    1.	安装全局（加-g）：
+			1.cnpm install -g webpack
+			2.cnpm install -g webpack-dev-server （开发服务器）
+		2.  目录安装
+			1.cnpm install  webpack --save
+			2.cnpm install  webpack-dev-server --save（开发服务器）
+	热加载方法
+			1.使用webpack wacth模式。自动更新 budle.js文件
+				webpack --wacth
+			2.使用 webpack-dev-server 
+			     运行webpack-dev-server 命令得到如下说明开启成功
+					Project is running at http://localhost:8080/
+					webpack output is served from /
+					Hash: d793b18d9d7745628dca
+					Version: webpack 3.11.0
+					Time: 2245mse
+			    （特别注意：在使用webpack-dev-server热加载的时候，
+				由于本地文件中不存储编译后的最新状态，而是实时编译后的文件都保存到了内存当中。所以我们需要在html中 
+				将bundle.js的引用修改为：服务器地址。例如：http://localhost:8080/bundle.js。不然不会自动更新）
