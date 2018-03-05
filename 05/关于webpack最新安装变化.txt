@@ -1,0 +1,86 @@
+webpack 安装兼容版本号
+"webpack": "^3.11.0",
+"webpack-dev-server": "^2.11.1"
+webpack 中 loders不在使用 改为 rules
+打包 webpack
+jsx 表达式
+参数 ：绑定参数时 直接花括号   {}
+react 生命周期
+  1. component
+  componentWillMount(){
+      console.log('将要加载..');
+  }
+  componentDidMount(){
+    console.log('加载完成 ..');
+  }
+react
+    state :自身属性　改变会更新ｒｅｄｅｒ（）；
+    ｐｒｏｐｓ:外来属性，组件之间传值用（父对子）
+事件：
+    控件事件：//事件调用时需要用bind(this)将外界this传入函数内
+子对父的传值，还是要依靠父控件给予子控件传递参数方法，再通过子控件的事件来调用
+参数或者方法，从而达到传值效果
+检验数据：类名.propTypes={
+      属性名：
+      optionalArray: PropTypes.array,
+      optionalBool: PropTypes.bool,
+      optionalFunc: PropTypes.func,
+      optionalNumber: PropTypes.number,
+      optionalObject: PropTypes.object,
+      optionalString: PropTypes.string,
+      optionalSymbol: PropTypes.symbol,
+}
+默认数据：类名.defaultProps = {
+  name: 'Stranger'
+};
+frist Type
+var domName=document.getElementById('donName');
+ReactDOM.findDOMNode(domName).style.color='red'
+;
+second Types
+通过定义refs来操作dom
+tong guo di yi ref propTypes lai cao zuo dom
+::::::::::::Mixin diffren component share command ablity!::::::::::::
+不同组件共享相同功能
+install Mixin!
+Mixin: cnpm install react-Mixin@2
+
+import ReactMixin from 'react-mixin';
+import Mixinlog from './mixins';
+ReactMixin(BodyIndex.prototype,Mixinlog); 赋值
+React 样式布局
+定义样式:
+  原生态的css样式都要用双引号包裹。
+
+例： const styleCompinentHeader={
+  header:{
+    backgroundColor:"#333333",
+    color:"FFF",
+    "padding-top":"15px",
+    paddingBottom:"15px"
+  }
+}
+state表达式控制样式
+例：
+const styleComponentHeader = {
+  header:{
+    backgroundColor:"#333333",
+    color:"#FFF",
+    paddingTop:(this.state.miniHeader)?"3px":"15px",//注意不要用花括号
+    //"padding-top":"15px",不推荐使用
+    paddingBottom:"15px"
+  }
+}
+------------------------------------------------------------------------
+Css 模块化操作
+模块化的意义：防止全局污染，只加载必需的模块。
+安装标签插件（install）
+  "babel-plugin-react-html-attrs 解决html 标签与react标签冲突
+  style-loader
+  "css-loader 加载样式插件
+安装完之后，在webpack.config.js里面配置插件
+    添加    plugins:['react-html-attrs']  到querry中
+    {
+      test:/\.css$/,
+      loader:'style-loader!css-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]'
+    }
