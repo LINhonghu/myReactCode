@@ -1,0 +1,46 @@
+1.使用并安装  antdesign
+    cnpm install antd
+2.react router 介绍使用
+    router 概念 ：负责页面跳转的关系
+3．router 安装
+    cnpm install --save react-router@2.8.1
+4.创建root.js作为新程序入口
+5.导入相应的
+    import {Router,Route,hashHistory} from 'react-router'内容;
+6.修改webpack.config.js
+      entry:".\\js\\root.js",
+7.bundle.js:24188 Uncaught TypeError: Cannot read property 'func' of undefined
+  错误说明： router 版本跟 react 版本不兼容
+8.配置route.js:
+  例：
+  return(
+    <Router history={hashHistory}>
+      <Route component={Index} path="/">
+        <Route component={ComponentList} path="List"></Route>
+      </Route>
+      <Route component={ComponentDetails} path="Detail"></Route>
+    </Router>
+  )
+}
+9.通过在index.js中设置 ：
+    <div>
+      {this.props.children}
+    </div>
+    和 root.js中配置
+    <Route component={Index} path="/">
+      <Route component={ComponentList} path="List"></Route>
+    </Route>
+    Route的嵌套 可以在父页面中嵌套子页面
+10.Route Link 的使用
+  import {Link} from  'react-router'
+  <li><Link to={`/`}></Link></li>(Link 和 a 用法差不多)
+11.原理 ：主要通过检查Hash的变化来实现页面的跳转与返回，所以没有刷新页面机制
+12.Router 的传参机制
+      如何传？
+        在Root.js中找到需要传递的参数的页面的Path，设置 加上   /:参数名
+        如
+              <Route component={ComponentDetails} path="Detail:id"></Route>
+      如何接受？
+            在接收页面中，通过
+              this.props.params.参数名
+            便可以接收到参数

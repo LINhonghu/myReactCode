@@ -1,0 +1,96 @@
+.logo{
+  align-items:center;
+  display: flex;
+}
+.logo img{
+  width: 48px;
+  height: 48px;
+}
+.logo span{
+  font-size: 24px;
+  padding-left: 5px;
+}
+.footer{
+  text-align: center;
+}
+.myresgiset button{
+  float:right;
+  padding-left: 20px;
+}
+.container{
+  padding-top: 10px;
+}
+.leftContainer{
+    width: 400px;
+    float: left;
+    margin-right: 10px;
+}
+.carousel{
+  width: 400px;
+  float: left;
+  margin-bottom: 10px;
+}
+.tabs_news {
+    padding-left: 10px;
+    width: 460px;
+    float: left;
+}
+.tabs_product {
+    width: 250px;
+    float: left;
+}
+.tabs_news li {
+    height: 27px;
+    line-height: 27px;
+    font-size: 14px;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 417px;
+    float: left;
+    text-overflow: ellipsis;
+}
+
+.tabs_product li {
+    height: 27px;
+    line-height: 27px;
+    font-size: 14px;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 257px;
+    text-overflow: ellipsis;
+}
+.topNewsList {
+    float: left;
+    text-align: left;
+    font-size: 14px;
+    margin-bottom: 10px;
+      padding-left: 0px;
+}
+.topNewsList a {
+    line-height: 22px !important;
+    color: #666 !important;
+
+}
+.tab_news {
+    padding-left:0px;
+    width: 460px;
+    float: left;
+}
+.myul{
+  padding: 0px;
+}
+.tab_news li {
+   text-align: left;
+    height: 27px;
+    line-height: 27px;
+    font-size: 14px;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 417px;
+    float: left;
+    text-overflow: ellipsis;
+}
+.imageblock{
+  float: left;
+  margin-left: 10px;
+}
